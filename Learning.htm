@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title>Learning</title>
+		<style>
+			.accordion {
+				background-color1: #eee;
+				background-color: #fff;
+				color: #444;
+				cursor: pointer;
+				padding: 18px;
+				width: 100%;
+				text-align: left;
+				border: none;
+				outline: none;
+				transition: 0.4s;
+				font-size: 15px;
+				font-weight: bold;
+			}
+
+			/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+			.active, .accordion:hover {
+				background-color: #ccc;
+			}
+
+			/* Style the accordion panel. Note: hidden by default */
+			.panel {
+				padding: 0 18px;
+				background-color: white;
+				display: none;
+				overflow: hidden;
+			}
+
+			.accordion:after {
+				content: '\02795'; /* Unicode character for "plus" sign (+) */
+				font-size: 13px;
+				color: #777;
+				float: right;
+				margin-left: 5px;
+			}
+
+			.active:after {
+				content: "\2796"; /* Unicode character for "minus" sign (-) */
+			}
+
+			.section-content {
+				font-size: 14px;
+			}
+			.section-content:hover {
+				text-decoration: underline;
+				cursor: pointer;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body style="font-family:Roboto,Arial,Helvetica,sans-serif;letter-spacing: .2px;font-size: 14px;margin: 0px; padding: 0px;">
+		<table style="border-style: solid;width: 100%;height: 100%;">
+			<tr style="vertical-align: top;">
+				<td width="350px">
+					<div style="background-color: #F8F9FA;padding: 15px;scroll-behavior: auto;">
+						<div style="box-sizing: border-box;border: 1px solid #dadce0;
+						border-radius: 3px;padding: 10px;background-color: #FFFFFF;">
+							<!--Section title-->
+							<button class="accordion">Coding</button>
+							<!--Section content-->
+							<div class="panel">
+							  <p class="section-content">Grokking the Coding Interview</p>
+							  <p class="section-content">Own notes - Linked List</p>
+							  <p class="section-content">Own notes - Array</p>
+							  <p class="section-content">Own notes - Tree</p>
+							</div>
+							<!--End of section-->
+
+							<button class="accordion">Section 2</button>
+							<div class="panel">
+							  <p>Lorem ipsum...</p>
+							</div>
+							<button class="accordion">Section 3</button>
+							<div class="panel">
+							  <p>Lorem ipsum...</p>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td>
+					<embed src="https://github.com/cyrilbeschi/Coding/raw/main/Array/01_sort_by_even_number.py" width="400" height="400" style="border:none;" />
+					<!--
+					<iframe id="annuncia" src2="https://youtube.com/" style="border: none;height: 100%;width: 100%;"
+					src1="https://www.notion.so/Linked-List-54b819d5860b4759b25d658f1af8880d" 
+					src="https://github.com/cyrilbeschi/Coding/raw/main/Array/01_sort_by_even_number.py"></iframe>
+					-->
+					<div>
+					<object id="annuncia" type="text/html" 
+					data="https://github.com/cyrilbeschi/Coding/raw/main/Array/01_sort_by_even_number.py" 
+						width="100%" height="100%" style1="overflow:auto;">
+					</object>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<script>
+			var acc = document.getElementsByClassName("accordion");
+			var i;
+
+			for (i = 0; i < acc.length; i++) {
+				acc[i].addEventListener("click", function() {
+					/* Toggle between adding and removing the "active" class,
+					to highlight the button that controls the panel */
+					this.classList.toggle("active");
+
+					/* Toggle between hiding and showing the active panel */
+					var panel = this.nextElementSibling;
+					if (panel.style.display === "block") {
+						panel.style.display = "none";
+					} else {
+						panel.style.display = "block";
+					}
+				});
+			}
+
+			var cont = document.getElementsByClassName("section-content");
+			var j;
+			for (j = 0; j < cont.length; j++) {
+					cont[j].addEventListener("click", function() {
+						//alert('clicked: ' + this.innerText);
+						document.getElementById("annuncia").src = "https://www.notion.so/Linked-List-54b819d5860b4759b25d658f1af8880d";
+				});
+			}
+		</script>
+	</body>
+
+</html>
